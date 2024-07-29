@@ -50,11 +50,11 @@ defmodule AshCubDB.DataLayer do
 
   @doc false
   @impl true
-  def can?(resource, :create), do: Dir.writable?(resource)
-  def can?(resource, :update), do: Dir.writable?(resource)
-  def can?(resource, :upsert), do: Dir.writable?(resource)
-  def can?(resource, :destroy), do: Dir.writable?(resource)
-  def can?(resource, :read), do: Dir.readable?(resource)
+  def can?(_, :create), do: true
+  def can?(_, :update), do: true
+  def can?(_, :upsert), do: true
+  def can?(_, :destroy), do: true
+  def can?(_, :read), do: true
   def can?(_, :multitenancy), do: true
   def can?(_, :filter), do: true
   def can?(_, :limit), do: true
